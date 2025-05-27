@@ -12,3 +12,11 @@ vendas = [('2023', 4093), ('2021', 4320), ('2021', 5959),
 
 #Crie uma lista usando list comprehension para filtrar os valores de 2022
 #e que sejam maiores que 6000.
+
+#Minha solução
+vendas_2022 = [filtro[1] for filtro in vendas if filtro[0]== '2022' and filtro[1] > 6000]
+print(vendas_2022)
+
+#Instrutor
+filtro = [tupla[1] for tupla in vendas if tupla[0] == '2022' and tupla[1] > 6000]
+print(filtro)

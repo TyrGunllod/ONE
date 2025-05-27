@@ -12,3 +12,19 @@ preco = [93.0, 102.0, 18.0, 41.0, 122.0, 14.0, 71.0, 48.0, 14.0, 144.0]
 
 #Crie uma lista de tuplas em que cada tupla tenha id, quantidade, preço e valor total,
 #na qual a primeira tupla é o cabeçalho da tabela.
+
+#Minha solução
+valor_total = [quantidade[i] * preco[i] for i in range(len(quantidade))]
+
+vendas = [('ID', 'QUANTIDADE', 'PREÇO', 'VALOR TOTAL')] + [
+    (id[i], quantidade[i], preco[i], valor_total[i]) for i in range(len(id))]
+
+print(vendas)
+
+print('')
+
+#Instrutor
+tabela = [('id', 'quantidade', 'preco', 'total')]
+tabela += [(id[i], quantidade[i], preco[i], quantidade[i]*preco[i]) for i in range(len(id))]
+
+print(tabela)

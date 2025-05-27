@@ -20,3 +20,21 @@ estados = ['SP', 'ES', 'MG', 'MG',
 #Dica: Você pode fazer um passo intermediário para gerar uma lista de listas
 #em que cada uma das listas possui o nome de apenas um Estado com valores repetidos.
 
+#Minha solução
+contagem = {estado: estados.count(estado) for estado in set(estados)}
+print(contagem)
+
+print('')
+
+#Instrutor
+estados_unicos = list(set(estados))
+print(estados_unicos)
+
+lista_de_listas = []
+for estado in estados_unicos:
+    lista = [uf for uf in estados if uf == estado]
+    lista_de_listas.append(lista)
+print(lista_de_listas)
+
+contagem_valores = {estados_unicos[i]: len(lista_de_listas[i]) for i in range(len(estados_unicos))}
+print(contagem_valores)

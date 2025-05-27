@@ -20,3 +20,26 @@ funcionarios = [('SP', 16), ('ES', 8), ('MG', 9),
 #Dica: Você pode fazer um passo intermediário para gerar uma lista de listas
 #em que cada uma das listas possui apenas os valores numéricos de funcionários(as) de cada Estado.
 
+#Minha solução
+totais = {estado: sum(qtd for est, qtd in funcionarios if est == estado)
+          for estado in set(est for est, _ in funcionarios)}
+
+print(totais)
+
+print('')
+
+#Instrutor
+estados_unicos = list(set([tupla[0] for tupla in funcionarios]))
+print(estados_unicos)
+
+lista_de_listas = []
+for estado in estados_unicos:
+    lista = [tupla[1] for tupla in funcionarios if tupla[0] == estado]
+    lista_de_listas.append(lista)
+print(lista_de_listas)
+
+agrupamento_por_estado = {estados_unicos[i]: lista_de_listas[i] for i in range(len(estados_unicos))}
+print(agrupamento_por_estado)
+
+soma_por_estado = {estados_unicos[i]: sum(lista_de_listas[i]) for i in range(len(estados_unicos))}
+print(soma_por_estado)
